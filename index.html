@@ -10,24 +10,28 @@
 <body>
     <header>
         <div class="logo">
-            <img src="LOGO-Magdiel.ico" alt="logo Guedelha Consultoria">
+            <img src="LOGO-Magdiel.ico" alt="Logo Guedelha Consultoria">
         </div>
         <nav>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#sobre">Sobre Nós</a></li>
-                    <li><a href="index.html#servicos">Serviços</a></li>
-                    <li><a href="artigos.html">Artigos</a></li>
-                    <li><a href="projetos-arquitetonicos.html">Projetos Arquitetônicos</a></li>
-                    <li><a href="index.html#galeria">Galeria</a></li>
-                    <li><a href="index.html#contato">Contato</a></li>
-                    <li><a href="index.html#faq">Perguntas Frequentes</a></li>
-                </ul>
-            </nav>
+            <!-- Ícone de hambúrguer para telas pequenas -->
+            <div id="menu-overlay"></div>
+            <button id="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+            <!-- Lista de links de navegação -->
+            <button id="menu-toggle"></button>
+            <div id="menu">...</div>
+            <div id="menu-overlay">...</div>
+            <ul id="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#sobre">Sobre Nós</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="artigos.html">Artigos</a></li>
+                <li><a href="projetos-arquitetonicos.html">Projetos Arquitetônicos</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="#faq">Perguntas Frequentes</a></li>
+            </ul>
         </nav>
     </header>
-
     <section id="home" class="hero">
         <h1>Olá! Nós somos a Guedelha Consultoria</h1>
         <a href="#servicos" class="btn">Conheça nossos serviços</a>
@@ -68,9 +72,6 @@
             </div>
         </div>
     </section>
-
-
-
     <section id="galeria" class="galeria">
         <h2>Galeria</h2>
         <div class="gallery-grid">

@@ -14,18 +14,100 @@ body, html {
     }
 }
 
+/* Estilos gerais */
 header {
-    background-color: #55855a;
-    color: #fff;
-    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    transition: background-color 0.3s ease, padding 0.3s ease;
+    background-color: #55855a;
+    padding: 10px 20px;
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+nav ul {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+nav ul.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff6f61;
+}
+#menu {
+    display: none; /* Oculta o menu por padrão */
+}
+
+#menu.active {
+    display: flex; /* Mostra o menu quando ativo */
+}
+
+#menu-overlay {
+    display: none; /* Oculta o overlay por padrão */
+}
+
+#menu-overlay.active {
+    display: block; /* Mostra o overlay quando ativo */
+}
+/* Ícone de hambúrguer (oculto em telas grandes) */
+#menu-toggle {
+    display: none; /* Oculta o ícone em telas grandes */
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Estilos para telas pequenas (mobile) */
+@media (max-width: 767px) {
+    #menu-toggle {
+        display: block; /* Mostra o ícone em telas pequenas */
+    }
+
+    nav ul {
+        display: none; /* Oculta o menu em telas pequenas */
+        flex-direction: column;
+        background-color: #55855a;
+        position: absolute;
+        top: 70px; /* Ajuste conforme a altura do header */
+        right: 20px;
+        width: 200px;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul.active {
+        display: flex; /* Mostra o menu quando ativo */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
 }
 
 header.scrolled {
