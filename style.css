@@ -1,0 +1,617 @@
+body, html {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin: 0 auto;
+    height: 100%;
+    box-sizing: border-box;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+header {
+    background-color: #55855a;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+header.scrolled {
+    background-color: #55855a;
+    padding: 5px 20px;
+}
+
+header .logo img {
+    height: 50px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+header .logo img:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff6f61;
+    transform: translateY(-3px);
+}
+
+.hero {
+    background-image: url(img/capa\ hero.jpeg);
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    padding: 150px 20px;
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 100%;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 0px;
+    padding: 0%;
+    position: relative;
+    top: 70px;
+    z-index: 2;
+    animation: slideInFromTop 1s ease-out, float 3s ease-in-out infinite;
+}
+
+.hero p {
+    position: relative;
+    z-index: 2;
+    animation: slideInFromBottom 1s ease-out, float 3s ease-in-out infinite;
+}
+
+.hero .btn {
+    background-color: #207228;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 10px;
+    position: relative;
+    top: 90px;
+    z-index: 2;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero .btn:hover {
+    background-color: #055a0e;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Estilos para a seção "Nossos Serviços" */
+.services, .faq {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #f9f9f9; /* Fundo claro */
+}
+
+.services h2 {
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    color: #333; /* Cor do texto escuro */
+    animation: fadeIn 1s ease-in;
+}
+
+.service-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.service-item {
+    background-color: #ffffff; /* Fundo branco */
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #e0f7fa; /* Fundo azul claro ao passar o mouse */
+}
+
+.service-item h3 {
+    margin-bottom: 10px;
+    color: #00796b; /* Verde-azulado escuro */
+    font-size: 1.5em;
+}
+
+.service-item p {
+    color: #555;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #31833d;
+}
+
+.service-item:hover h3, .service-item:hover p {
+    color: #fff;
+}
+
+.service-item h3 {
+    margin-bottom: 10px;
+    color: #070000;
+    transition: color 0.3s ease;
+}
+
+.service-item p {
+    color: #044d17;
+    transition: color 0.3s ease;
+}
+
+.contact {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact form input, .contact form textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact form input:focus, .contact form textarea:focus {
+    border-color: #ff6f61;
+    box-shadow: 0 0 8px rgba(255, 111, 97, 0.5);
+}
+
+.contact form button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact form button:hover {
+    background-color: #ff6f61;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.galeria {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.galeria h2 {
+    margin-bottom: 40px;
+    animation: fadeIn 1s ease-in;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+@keyframes wave {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.hero .btn.wave {
+    animation: wave 1s ease-in-out;
+}
+/* Estilos para a seção "Sobre Nós" */
+.about {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #f9f9f9; /* Fundo claro */
+}
+
+.about h2 {
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    color: #333; /* Cor do texto escuro */
+    animation: fadeIn 1s ease-in;
+}
+
+.about-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.about-item {
+    background-color: #ffffff; /* Fundo branco */
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.about-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #e0f7fa; /* Fundo azul claro ao passar o mouse */
+}
+
+.about-item h3 {
+    margin-bottom: 10px;
+    color: #00796b; /* Verde-azulado escuro */
+    font-size: 1.5em;
+}
+
+.about-item p {
+    color: #555;
+    font-size: 1em;
+    line-height: 1.6;
+}
+/* Estilos específicos para a página de Artigos */
+.artigos {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #e8f5e9; /* Fundo verde claro */
+}
+
+.artigos h2 {
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    color: #2e7d32; /* Verde escuro */
+    animation: fadeIn 1s ease-in;
+}
+
+.artigos-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.artigo-item {
+    background-color: #ffffff; /* Fundo branco */
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artigo-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.artigo-item h3 {
+    margin-bottom: 10px;
+    color: #1b5e20; /* Verde mais escuro */
+    font-size: 1.5em;
+}
+
+.artigo-item p {
+    color: #333;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.artigo-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #2e7d32; /* Verde escuro */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.artigo-link:hover {
+    color: #1b5e20; /* Verde mais escuro */
+}
+/* Estilos para a seção de texto com imagens */
+.texto-com-imagens {
+    padding: 100px 20px;
+    text-align: justify; /* Alinhamento justificado do texto */
+    background-color: #f9f9f9; /* Fundo claro */
+}
+
+.texto-com-imagens h2 {
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    color: #333; /* Cor do texto escuro */
+    text-align: center; /* Centralizar o título */
+    animation: fadeIn 1s ease-in;
+}
+
+.conteudo-texto {
+    max-width: 800px; /* Largura máxima do conteúdo */
+    margin: 0 auto; /* Centralizar o conteúdo */
+    line-height: 1.6; /* Espaçamento entre linhas */
+    font-size: 1.1em;
+    color: #555; /* Cor do texto */
+}
+
+.conteudo-texto p {
+    margin-bottom: 20px; /* Espaçamento entre parágrafos */
+}
+
+.imagem-no-texto {
+    margin: 20px 0; /* Espaçamento vertical */
+    text-align: center; /* Centralizar a imagem */
+}
+
+.imagem-no-texto img {
+    max-width: 100%; /* Garantir que a imagem não ultrapasse o container */
+    height: auto; /* Manter a proporção da imagem */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.imagem-no-texto img:hover {
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
+}
+
+.imagem-no-texto figcaption {
+    margin-top: 10px; /* Espaçamento acima da legenda */
+    font-style: italic; /* Texto em itálico */
+    color: #777; /* Cor da legenda */
+    font-size: 0.9em;
+}
+/* Estilos para telas pequenas (celulares) */
+@media (max-width: 767px) {
+    body {
+        font-size: 14px; /* Reduzir o tamanho da fonte */
+    }
+
+    header {
+        padding: 10px; /* Reduzir o padding do header */
+    }
+
+    nav ul li {
+        margin: 0 10px; /* Reduzir o espaçamento entre os itens do menu */
+    }
+
+    .hero h1 {
+        font-size: 2em; /* Reduzir o tamanho do título */
+    }
+
+    .about-container, .service-list, .gallery-grid {
+        flex-direction: column; /* Empilhar itens verticalmente */
+    }
+
+    .about-item, .service-item, .gallery-item {
+        width: 100%; /* Ocupar 100% da largura */
+        margin-bottom: 20px; /* Adicionar espaçamento entre os itens */
+    }
+}
+
+
+/* Estilos para telas pequenas (celulares) */
+@media (max-width: 700px) {
+    body {
+        font-size: 14px; /* Reduzir o tamanho da fonte */
+    }
+
+    header {
+        padding: 20px; /* Reduzir o padding do header */
+    }
+
+    nav ul li {
+        margin: 0 10px; /* Reduzir o espaçamento entre os itens do menu */
+    }
+
+    .hero h1 {
+        font-size: 2em; /* Reduzir o tamanho do título */
+    }
+
+    .about-container, .service-list, .gallery-grid {
+        flex-direction: column; /* Empilhar itens verticalmente */
+    }
+
+    .about-item, .service-item, .gallery-item {
+        width: 100%; /* Ocupar 100% da largura */
+        margin-bottom: 20px; /* Adicionar espaçamento entre os itens */
+    }
+}
+
+/* Estilos para telas médias (tablets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    body {
+        font-size: 16px;
+    }
+
+    .about-container, .service-list, .gallery-grid {
+        flex-wrap: wrap; /* Quebrar itens em várias linhas */
+    }
+
+    .about-item, .service-item, .gallery-item {
+        width: 48%; /* Dois itens por linha */
+        margin-bottom: 20px;
+    }
+}
+
+/* Estilos para telas grandes (computadores) */
+@media (min-width: 1024px) {
+    body {
+        font-size: 18px;
+    }
+
+    .about-container, .service-list, .gallery-grid {
+        justify-content: space-between; /* Distribuir itens uniformemente */
+    }
+
+    .about-item, .service-item, .gallery-item {
+        width: 30%; /* Três itens por linha */
+    }
+}
+.hero {
+    padding: 10vh 5%; /* Usar % e vh para padding */
+}
+
+.hero h1 {
+    font-size: 3rem; /* Usar rem para tamanho da fonte */
+}
+
+.about-item, .service-item, .gallery-item {
+    width: 100%; /* Ocupar 100% da largura em telas pequenas */
+    margin: 1em 0; /* Usar em para margens */
+}
+.about-container, .service-list, .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Cria colunas responsivas */
+    gap: 20px; /* Espaçamento entre os cards */
+    place-items: center; /* Centraliza os cards horizontal e verticalmente */
+    padding: 20px;
+}
+
+.about-item, .service-item, .gallery-item, .artigo-item {
+    width: 100%; /* Ocupa 100% da largura do container */
+    max-width: 300px; /* Limita a largura máxima dos cards */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
